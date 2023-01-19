@@ -1,8 +1,11 @@
 const Sequelize = require("sequelize");
-require('dotenv').config();
 
-// #TODO pass db configs from .env
-const databaseInstance = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+// const databaseInstance = new Sequelize('clinic', 'smart', 'smart', {
+//   host: 'localhost',
+//   dialect: 'postgres'
+// });
+
+const databaseInstance = new Sequelize('clinic', 'smart', 'smart', {
 	host: process.env.DB_HOST,
 	dialect: "postgres",
 	pool: {
@@ -12,5 +15,4 @@ const databaseInstance = new Sequelize(process.env.DB_NAME, process.env.DB_USERN
 		idle: 10000,
 	}
 });
-
-module.exports = databaseInstance;
+module.exports = databaseInstance; 
