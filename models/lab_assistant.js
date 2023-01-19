@@ -1,7 +1,7 @@
 const sequelize = require("../config/db");
 const { DataTypes } = require("sequelize");
 
-const Patient = sequelize.define("patients", {
+const LabAssistant = sequelize.define("lab_assistants", {
 	id: {
 		type: DataTypes.INTEGER,
 		allowNull: false,
@@ -11,7 +11,7 @@ const Patient = sequelize.define("patients", {
 		type: DataTypes.STRING,
     allowNull: false
 	},
-  patient_name: {
+  assistant_name: {
 		type: DataTypes.STRING,
     allowNull: false
   },
@@ -28,4 +28,4 @@ const Patient = sequelize.define("patients", {
 	}
 });
 
-module.exports = Patient;
+module.exports = LabAssistant;
