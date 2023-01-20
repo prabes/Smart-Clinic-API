@@ -2,6 +2,7 @@ const Patient = require("../models/patient");
 
 const getAllPatients = async (req, res) => {
   try {
+    console.log("HERE")
     const patients = await Patient.findAll();
     return res.json({patients});
   } catch (e) {

@@ -24,12 +24,6 @@ const Doctor = sequelize.define("doctors", {
     type: DataTypes.STRING,
     allowNull: true,
   },
-	createdAt: {
-		type: DataTypes.DATE,
-	},
-	updatedAt: {
-		type: DataTypes.DATE,
-	}
 });
 
 module.exports = Doctor;

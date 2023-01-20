@@ -15,7 +15,7 @@ const LabAssistant = sequelize.define("lab_assistants", {
 		type: DataTypes.STRING,
     allowNull: false
   },
-  phoneNumber: {
+  phone_number: {
     type: DataTypes.STRING,
     allowNull: true,
     primaryKey: true,

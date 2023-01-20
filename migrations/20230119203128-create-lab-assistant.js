@@ -15,15 +15,16 @@ module.exports = {
       uid: {
         type: Sequelize.INTEGER
       },
-      phoneNumber: {
+      phone_number: {
         type: Sequelize.STRING
       },
+      /* Creating a timestamp for when the record was created and updated. */
       createdAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       }
     });

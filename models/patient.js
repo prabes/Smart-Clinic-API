@@ -15,7 +15,7 @@ const Patient = sequelize.define("patients", {
 		type: DataTypes.STRING,
     allowNull: false
   },
-  phoneNumber: {
+  phone_number: {
     type: DataTypes.STRING,
     allowNull: true,
     primaryKey: true,
@@ -25,7 +25,7 @@ const Patient = sequelize.define("patients", {
 	},
 	updatedAt: {
 		type: DataTypes.DATE,
-	}
+  }
 });
 
 module.exports = Patient;
