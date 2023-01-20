@@ -1,17 +1,20 @@
-const LabAssistant = require("../models/patient");
+const LabAssistant = require("../models/lab_assistant");
 
-const checkloggedInAssistant = async (req, res) => {
+const checkloggedInAssistant = async (req, resp) => {
   const { body } = req;
+  let loggedInStatus
   if (body.phone && body.password) {
     const labAssistant = await LabAssistant.findAll({
       where: {
-        phone: body.phone,
+        phone_number: body.phone,
         password: body.password
       }
+    }).then(res => {
+        loggedInStatus = res.length ? true : false
     });
-    return res.status(200).json({labAssistant})
+    return resp.status(200).json({ ...labAssistant, loggedInStatus })
   }
-  return res.status(404).json({message: 'LabAssistant Not logged In'})
+  return res.status(404).json({message: 'Not enought data!'})
 }
 
 const createLabAssistant = async (req, res) => {

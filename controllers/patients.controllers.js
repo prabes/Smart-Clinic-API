@@ -5,13 +5,14 @@ const checkloggedInPatient = async (req, res) => {
   if (body.phone && body.password) {
     const patient = await Patient.findAll({
       where: {
-        phone: body.phone,
+        phone_number: body.phone.toString(),
         password: body.password
       }
     });
-    return res.status(200).json({patient})
+    const loggedInStatus = patient.length ? true : false
+    return res.status(200).json({ ...patient, loggedInStatus })
   }
-  return res.status(404).json({message: 'Patient Not logged In'})
+  return res.status(404).json({message: 'No Enough Data'})
 }
 const getAllPatients = async (req, res) => {
   try {

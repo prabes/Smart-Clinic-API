@@ -6,7 +6,7 @@ const router = require("./routes");
 
 
 var corsOptions = {
-	origin: "http://localhost:3000",
+  origin: ["http://localhost:3000","http://192.168.1.98:3000", "*"]
 };
 
 app.use(cors(corsOptions));
